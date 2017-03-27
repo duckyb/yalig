@@ -1,6 +1,3 @@
-*This project is no longer maintained*
-======================================
-
 Description
 -----------
 Versatile Lorem Ipsum Generator that inserts various types of blind text directly into websites or copies it to the clipboard.
@@ -26,5 +23,10 @@ Feel free to give feedback about missing features and bugs. See the extension's 
 Copyright and License
 ---------------------
 Copyright (c) 2012 Dominik Raymann
+              2017 Dennis Römmich
 
 This software is licensed under the MIT license: http://www.opensource.org/licenses/MIT
+
+Authors
+---------------------
+This Plugin was written by Dominik Raymann
