@@ -91,9 +91,7 @@ function createURL() {
 function insertText(text, callback) {
   if (settings.isCopyToClipboard()) {
     if (navigator.clipboard) {
-      navigator.clipboard
-        .writeText(text)
-        .err(console.error("Could not copy text: ", err));
+      navigator.clipboard.writeText(text);
     } else {
       console.warn("Clipboard API not supported, falling back to execCommand.");
       var clipboard = document.getElementById("clipboard");
@@ -178,7 +176,7 @@ var settings = {
   },
 
   reloadContextMenu: function () {
-    chrome.contextMenus.removeAll();
+    browser.contextMenus.removeAll();
     if (settings.isContextMenu()) {
       createContextMenu();
     }
