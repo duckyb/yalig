@@ -101,7 +101,8 @@ function makeTextInsertButton(id, text) {
   var el = document.querySelector("#" + id);
   var parser = new DOMParser();
   var doc = parser.parseFromString(text, "text/html");
-  el.innerHTML = doc.body.textContent || "";
+  // Replace unsafe innerHTML with textContent for better security
+  el.textContent = doc.body.textContent || "";
   el.addEventListener("click", function () {
     insertText(text);
   });

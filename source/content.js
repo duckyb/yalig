@@ -23,6 +23,7 @@ function insertIntoValueElement(element, text) {
   element.selectionStart = start;
   element.selectionEnd = start;
   element.focus();
+  element.dispatchEvent(new Event("input", { bubbles: true }));
   element.dispatchEvent(new Event("change", { bubbles: true }));
   return true;
 }
@@ -41,6 +42,8 @@ function insertTextIntoPage(text) {
     (activeElement.tagName === "INPUT" || activeElement.tagName === "TEXTAREA")
   ) {
     activeElement.value += text;
+    activeElement.dispatchEvent(new Event("input", { bubbles: true }));
+    activeElement.dispatchEvent(new Event("change", { bubbles: true }));
   } else {
     console.warn("No suitable element to insert text into.");
   }
